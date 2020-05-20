@@ -1,0 +1,59 @@
+<div class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="list-group list-group-flush">
+
+      <div class="menu">
+        <button [popover]="popoverTemplate2" [outsideClick]="true" placement="bottom" container="body"
+          [adaptivePosition]="false">
+          <i class="fa fa-bars" style="font-size: 32px;"></i>
+        </button>
+        <ng-template #popoverTemplate2>
+          <ul class="popover-menu">
+            <li class="popover-menu-item">
+              <a href="">Liste des étudiants</a>
+            </li>
+            <li>
+              <a href="">Mon Profile</a>
+            </li>
+            <hr>
+            <li>
+              <a href="">Quiter</a>
+            </li>
+          </ul>
+        </ng-template>
+
+      </div>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom" class="text-center">
+      <div class="nav" style="justify-content: center;margin-top: 20px;">
+
+        <a class="btn btn-outline-primary" (click)="discussion()" style="margin:10px;">Discussion</a>
+        <a class="btn btn-outline-primary" (click)="tavaux()" style="margin:10px;">Travaux et devoirs </a>
+        <a class="btn btn-outline-primary" (click)="participant()" style="margin:10px;">Participant</a>
+      </div>
+
+    </nav>
+
+    <div class="container-fluid">
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+
+<script>
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>
